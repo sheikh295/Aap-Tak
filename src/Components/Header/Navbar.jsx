@@ -19,10 +19,12 @@ function Navbar() {
                                 Categories
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><hr className="dropdown-divider" /></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Sports</a></li>
+                                <li><a className="dropdown-item" href="#">Travelling</a></li>
+                                <li><a className="dropdown-item" href="#">Politics</a></li>
+                                <li><a className="dropdown-item" href="#">Finance</a></li>
+                                {/* <li><hr className="dropdown-divider" /></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li> */}
                             </ul>
                         </li>
                         <li className="nav-item">
