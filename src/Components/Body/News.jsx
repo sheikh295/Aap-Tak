@@ -3,7 +3,7 @@ import axios from 'axios'
 import NewsItem from './NewsItem'
 import Loader from '../Loader'
 
-function News() {
+function News(props) {
   
   const [articles, setArticles] = useState(['']);
   const [page, setPage] = useState(1);
@@ -14,7 +14,7 @@ function News() {
 
   useEffect(() => {
     axios
-    .get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=f95d94d8d93847c9805d41cd926525a7&page=${page}&pagesize=6`)
+    .get(`https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=f95d94d8d93847c9805d41cd926525a7&page=${page}&pagesize=6&category=${props.category}`)
     .then((response) => {
       setArticles(response.data.articles)
       setTotalArticles(response.data.totalResults)
@@ -22,7 +22,7 @@ function News() {
     .catch((error) => {
       setError(error.message)
     })
-  },[page]);
+  },[page, props.country, props.category]);
   
   const prevClick = () => {
     setPage(page - 1)
@@ -44,7 +44,7 @@ function News() {
   return (
     <>
       <div className='container my-3'>
-        <h1 className='text-center'>Aap Tak Top Headlines</h1>
+        <h1 className='text-center'>Aap Tak - Top {props.category} Headlines</h1>
         <h3 className='text-danger'> {error} </h3>
         <div className='row mt-5'>
           {
