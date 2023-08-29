@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import axios from 'axios'
 import NewsItem from './NewsItem'
 import Loader from '../Loader'
@@ -13,6 +13,10 @@ function News(props) {
 
 
   useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500)
     axios
     .get(`https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=f95d94d8d93847c9805d41cd926525a7&page=${page}&pagesize=6&category=${props.category}`)
     .then((response) => {
@@ -26,17 +30,9 @@ function News(props) {
   
   const prevClick = () => {
     setPage(page - 1)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1500);
   };
   const nextClick = () => {
     setPage(page + 1)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1500);
   };
   
   const totalPages = Math.ceil(totalArticles / 6)

@@ -15,7 +15,7 @@ function App() {
 
   const [category, setCategory] = useState('General')
   const setSports = () => {
-    setCategory("sports")
+    setCategory("Sports")
   };
   const setBusiness = () => {
     setCategory("Business")
