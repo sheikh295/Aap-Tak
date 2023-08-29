@@ -3,15 +3,15 @@ import axios from 'axios'
 import NewsItem from './NewsItem'
 import Loader from '../Loader'
 
+function News() {
+  
+  const [articles, setArticles] = useState(['']);
+  const [page, setPage] = useState(1);
+  const [error, setError] = useState('');
+  const [totalArticles, setTotalArticles] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-function News(props) {
-  
-  const [articles, setArticles] = useState([''])
-  const [page, setPage] = useState(1)
-  const [error, setError] = useState('')
-  const [totalArticles, setTotalArticles] = useState(0)
-  const [loading, setLoading] = useState(false)
-  
+
   useEffect(() => {
     axios
     .get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=f95d94d8d93847c9805d41cd926525a7&page=${page}&pagesize=6`)
