@@ -47,7 +47,7 @@ function News(props) {
           articles == '' || loading == true ? <Loader /> : 
           articles.map((article) => {
               return <div className='col-md-4' key={article.url}>
-                  <NewsItem title={article.title} description={article.description} img={article.urlToImage?article.urlToImage:'https://i.insider.com/64e9c9eab413420019a3f4de?width=1200&format=jpeg'} newsSrc={article.url} />
+                  <NewsItem title={article.title} description={article.description} img={article.urlToImage?article.urlToImage:'https://i.insider.com/64e9c9eab413420019a3f4de?width=1200&format=jpeg'} newsSrc={article.url} publishedAt={article.publishedAt} />
                 </div>
             })
           }
