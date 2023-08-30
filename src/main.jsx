@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from './Components/ErrorPage.jsx';
 import About from './Components/About.jsx';
 
+// Application before adding infinite scroll
+
 const router = createBrowserRouter([
   {
     path: "/",
