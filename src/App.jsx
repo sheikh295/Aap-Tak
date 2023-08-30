@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <Navbar country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setGeneral={setGeneral} setScience={setScience} />
+      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setGeneral={setGeneral} setScience={setScience} />
       <News country={country} category={category} />
     </>
   )

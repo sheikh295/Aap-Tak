@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { Outlet, Link } from "react-router-dom";
 
 function Navbar(props) {
-    
+
     return (
     <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -13,7 +14,7 @@ function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link id='home-nav-link' className={`nav-link ${props.activeClassHome}`} aria-current="page" to={`/`}>Home</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,7 +33,7 @@ function Navbar(props) {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
+                            <Link id='about-nav-link' className={`nav-link ${props.activeClassAbout}`} to={`/about`}>About</Link>
                         </li>
                         {/* <li className="nav-item">
                             <a className="nav-link disabled" aria-disabled="true">Disabled</a>

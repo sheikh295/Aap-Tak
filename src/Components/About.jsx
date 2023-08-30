@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Header/Navbar'
 
 function About() {
   return (
-    <div>About</div>
+    <>
+        <Navbar activeClassAbout="active" />
+    </>
   )
 }
 
