@@ -13,7 +13,7 @@ function App() {
       setCountry('in')
   };
 
-  const [category, setCategory] = useState('General')
+  const [category, setCategory] = useState('Top')
   const setSports = () => {
     setCategory("Sports")
   };
@@ -32,13 +32,13 @@ function App() {
   const setScience = () => {
     setCategory("Science")
   };
-  const setGeneral = () => {
-    setCategory("General")
+  const setTop = () => {
+    setCategory("Top")
   };
 
   return (
     <>
-      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setGeneral={setGeneral} setScience={setScience} />
+      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setTop={setTop} setScience={setScience} />
       <News country={country} category={category} />
     </>
   )

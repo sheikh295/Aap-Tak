@@ -6,7 +6,7 @@ function NewsItem(props) {
     const description = props.description;
     const img = props.img;
     const newsSrc = props.newsSrc;
-    const publishedAt = props.publishedAt;
+    const pubDate = props.pubDate;
 
   return (
     <>
@@ -16,7 +16,7 @@ function NewsItem(props) {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
-                <p className="card-text"><small className="text-body-secondary">{new Date(publishedAt).toGMTString()}</small></p>
+                <p className="card-text"><small className="text-body-secondary">{new Date(pubDate).toGMTString()}</small></p>
                 <a href={newsSrc} target='_blank' className="btn btn-sm btn-dark">Read More</a>
             </div>
         </div>
