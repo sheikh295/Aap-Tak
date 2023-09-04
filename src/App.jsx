@@ -5,12 +5,18 @@ import News from './Components/Body/News'
 
 function App() {
 
-  const [country, setCountry] = useState('us')
+  const [country, setCountry] = useState('pk')
   const setCountryUs = () => {
       setCountry('us')
   };
   const setCountryIn = () => {
       setCountry('in')
+  };
+  const setCountryPk = () => {
+    setCountry('pk')
+  };
+  const setCountryUk = () => {
+    setCountry('uk')
   };
 
   const [category, setCategory] = useState('Top')
@@ -38,7 +44,7 @@ function App() {
 
   return (
     <>
-      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setTop={setTop} setScience={setScience} />
+      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setCountryPk={setCountryPk} setCountryUk={setCountryUk} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setTop={setTop} setScience={setScience} />
       <News country={country} category={category} />
     </>
   )

@@ -42,8 +42,10 @@ function Navbar(props) {
                     <div className="d-flex dropdown">
                         <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{props.country}</button>
                         <ul className="dropdown-menu">
+                            <li><a onClick={props.setCountryPk} className="dropdown-item">PK</a></li>
                             <li><a onClick={props.setCountryUs} className="dropdown-item">US</a></li>
                             <li><a onClick={props.setCountryIn} className="dropdown-item">IN</a></li>
+                            <li><a onClick={props.setCountryUk} className="dropdown-item">UK</a></li>
                         </ul>
                     </div>
                 </div>
