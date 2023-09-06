@@ -12,6 +12,9 @@ function News(props) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  let q = '';
+  q = props.q;
+
 
   useEffect(() => {
     setLoading(true)
@@ -50,7 +53,17 @@ function News(props) {
         setError(error.message)
       })
     }
-  },[page, props.country, props.category]);
+    else if (q != '') {
+      axios
+      .get(`https://newsdata.io/api/1/news?apikey=pub_28530c92e33699f07e69a91449011eac73fea&language=en&image=1&country=${props.country}&category=${props.category}&q=${q}`)
+      .then((response) => {
+        setArticles(response.data.results)
+      })
+      .catch((error) => {
+        setError(error.message)
+      })
+    }
+  },[page, props.country, props.category, props.q]);
   
   const prevClick = () => {
     setPage(page - 1)
@@ -79,7 +92,7 @@ function News(props) {
     return (
       <>
         <div className='container my-3'>
-          <h1 className='text-center'>Aap Tak - Todays {props.category} Headlines</h1>
+          <h1 className='text-center'>Aap Tak - Todays {q != '' ? q : props.category} Headlines</h1>
           <h3 className='text-danger'> {error} </h3>
           <div className='row mt-5'>
             {

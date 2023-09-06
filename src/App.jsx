@@ -42,10 +42,15 @@ function App() {
     setCategory("Top")
   };
 
+  const [query, setQuery] = useState('')
+  const queryCall = (queryData) => {
+    setQuery(queryData)
+  }
+
   return (
     <>
-      <Navbar activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setCountryPk={setCountryPk} setCountryUk={setCountryUk} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setTop={setTop} setScience={setScience} />
-      <News country={country} category={category} />
+      <Navbar callQuery={queryCall} activeClassHome={"active"} country={country} setCountryIn={setCountryIn} setCountryUs={setCountryUs} setCountryPk={setCountryPk} setCountryUk={setCountryUk} setSports={setSports} setTechnology={setTechnology} setBusiness={setBusiness} setEntertainment={setEntertainment} setHealth={setHealth} setTop={setTop} setScience={setScience} />
+      <News q={query} country={country} category={category} />
     </>
   )
 }

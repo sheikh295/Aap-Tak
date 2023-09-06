@@ -3,6 +3,12 @@ import { Outlet, Link } from "react-router-dom";
 
 function Navbar(props) {
 
+    const setquery = (event) => {
+        event.preventDefault();
+        props.callQuery(event.target.search.value)
+        event.target.search.value = '';
+    };
+
     return (
     <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,7 +31,7 @@ function Navbar(props) {
                                 <li><a onClick={props.setTechnology} className="dropdown-item" >Technology</a></li>
                                 <li><a onClick={props.setBusiness} className="dropdown-item" >Business</a></li>
                                 <li><a onClick={props.setEntertainment} className="dropdown-item" >Entertainment</a></li>
-                                <li><a onClick={props.setGeneral} className="dropdown-item" >General</a></li>
+                                <li><a onClick={props.setTop} className="dropdown-item" >General</a></li>
                                 <li><a onClick={props.setHealth} className="dropdown-item" >Health</a></li>
                                 <li><a onClick={props.setScience} className="dropdown-item" >Science</a></li>
                                 {/* <li><hr className="dropdown-divider" /></li>
@@ -40,13 +46,17 @@ function Navbar(props) {
                         </li> */}
                     </ul>
                     <div className="d-flex dropdown">
-                        <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{props.country}</button>
+                        <button className="btn btn-primary dropdown-toggle mx-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">{props.country}</button>
                         <ul className="dropdown-menu">
                             <li><a onClick={props.setCountryPk} className="dropdown-item">PK</a></li>
                             <li><a onClick={props.setCountryUs} className="dropdown-item">US</a></li>
                             <li><a onClick={props.setCountryIn} className="dropdown-item">IN</a></li>
                             <li><a onClick={props.setCountryUk} className="dropdown-item">UK</a></li>
                         </ul>
+                        <form className="d-flex" role="search" onSubmit={setquery}>
+                            <input name='search' className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button id='searchBar' className="btn btn-outline-success" type="submit">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
